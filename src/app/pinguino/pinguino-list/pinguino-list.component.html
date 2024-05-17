@@ -1,0 +1,46 @@
+<div *ngIf="selected">
+  <app-paciente-detail [pinguino] = "selectedPinguino"></app-paciente-detail>
+ </div>
+
+
+<div class="container-fluid">
+  <div class="row">
+      <table class="table" >
+        <thead>
+          <tr>
+            <th class="h4">#</th>
+            <th class="h4">Nombre</th>
+            <th class="h4">Nombre Cientifico</th>
+            <th class="h4">Alientación</th>
+            <th class="h4">Distribución Mundial</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pinguino of pinguinos" (click)="onSelected(pinguino)">
+            
+            <td (click)="onSelected(pinguino)">
+              <dd class="id">{{pinguino.id}}</dd>
+            </td >
+            <td (click)="onSelected(pinguino)">
+              <dd class="name">{{pinguino.name}}</dd>
+            </td>
+            <td (click)="onSelected(pinguino)">
+              <dd class="scientific_name">{{pinguino.scientific_name}}</dd>
+            </td>
+            <td (click)="onSelected(pinguino)">
+              <dd class="feeding">{{pinguino.feeding}}</dd>
+            </td>
+            <td (click)="onSelected(pinguino)">
+              <dd class="global_distribution">{{pinguino.global_distribution}}</dd>
+            </td>
+
+
+            
+        </tr>
+        </tbody>
+      </table>
+      <div class="Distribucion">
+        <p class="text-center">El pinguino con mas distribucion es: {{ masDistribucion }}</p>
+      </div>
+  </div>
+</div>
